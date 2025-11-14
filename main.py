@@ -480,9 +480,6 @@ def analyze_pdf_with_gemini(pdf_path, genai_model="gemini-2.5-flash", api_key: O
 # Example usage:
 if __name__ == "__main__":
     # Usage:
-    #   python main.py path/to/newspaper.pdf [API_KEY]
-    # You can also set the environment variable in PowerShell before running:
-    #   $env:GENAI_API_KEY = "AIzaSyDqJkwi8eRO_sAOOr8ZAxG97XjkHCnKWWI"
     import sys
     if len(sys.argv) < 2:
         print("Usage: python main.py path/to/newspaper.pdf [API_KEY]")
