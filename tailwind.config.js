@@ -9,6 +9,7 @@ module.exports = {
     extend: {
       fontFamily: {
         sans: [
+          '"Plus Jakarta Sans"',
           "Inter",
           "SF Pro Display",
           "-apple-system",
@@ -18,9 +19,24 @@ module.exports = {
         ],
       },
       colors: {
-        "safe-green": "#10b981",
-        "moderate-yellow": "#f59e0b",
-        "unsafe-red": "#ef4444",
+        dark: {
+          900: "#121212",
+          800: "#1c1c1e",
+          700: "#2c2c2e",
+        },
+        pastel: {
+          cyan: "#a5f3fc",
+          mint: "#86efac",
+          pink: "#fbcfe8",
+          yellow: "#fde68a",
+        },
+        "safe-green": "#86efac",
+        "moderate-yellow": "#fde68a",
+        "unsafe-red": "#fbcfe8",
+      },
+      borderRadius: {
+        "3xl": "24px",
+        "4xl": "40px",
       },
       animation: {
         "slide-up": "slideUp 0.3s ease-out",

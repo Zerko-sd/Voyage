@@ -12,21 +12,31 @@ export default function SafetyScoreBar({
   label,
   showValue = true,
 }: SafetyScoreBarProps) {
-  const gradient = getSafetyGradient(score);
+  const getScoreColor = (score: number) => {
+    if (score >= 70) return "from-pastel-mint to-pastel-cyan";
+    if (score >= 40) return "from-pastel-yellow to-pastel-cyan";
+    return "from-pastel-pink to-pastel-yellow";
+  };
+
+  const getScoreGlow = (score: number) => {
+    if (score >= 70) return "shadow-pastel-mint/30";
+    if (score >= 40) return "shadow-pastel-yellow/30";
+    return "shadow-pastel-pink/30";
+  };
 
   return (
     <div className="space-y-2">
       <div className="flex justify-between items-center">
-        <span className="text-sm font-medium text-gray-700">{label}</span>
+        <span className="text-sm font-medium text-zinc-400">{label}</span>
         {showValue && (
-          <span className="text-sm font-semibold text-gray-900">
+          <span className="text-sm font-bold text-white">
             {score}/100
           </span>
         )}
       </div>
-      <div className="relative h-3 bg-gray-200 rounded-full overflow-hidden">
+      <div className="relative h-3 bg-dark-700 rounded-full overflow-hidden border border-white/5">
         <div
-          className={`h-full bg-gradient-to-r ${gradient} rounded-full transition-all duration-500 ease-out`}
+          className={`h-full bg-gradient-to-r ${getScoreColor(score)} rounded-full transition-all duration-500 ease-out shadow-lg ${getScoreGlow(score)}`}
           style={{ width: `${score}%` }}
         />
       </div>
