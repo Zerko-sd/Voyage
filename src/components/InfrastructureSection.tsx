@@ -15,22 +15,22 @@ export default function InfrastructureSection({
       name: "CCTV Coverage",
       value: infra.cctv,
       icon: Camera,
-      color: "text-blue-600",
-      bgColor: "bg-blue-50",
+      color: "text-pastel-cyan",
+      bgColor: "bg-pastel-cyan/10 border-pastel-cyan/20",
     },
     {
       name: "Street Lighting",
       value: infra.lighting,
       icon: Lightbulb,
-      color: "text-yellow-600",
-      bgColor: "bg-yellow-50",
+      color: "text-pastel-yellow",
+      bgColor: "bg-pastel-yellow/10 border-pastel-yellow/20",
     },
     {
       name: "Police Density",
       value: infra.policeDensity,
       icon: ShieldIcon,
-      color: "text-purple-600",
-      bgColor: "bg-purple-50",
+      color: "text-pastel-pink",
+      bgColor: "bg-pastel-pink/10 border-pastel-pink/20",
     },
   ];
 
@@ -40,7 +40,7 @@ export default function InfrastructureSection({
         const Icon = item.icon;
         return (
           <div key={item.name} className="flex items-start space-x-3">
-            <div className={`p-2 rounded-lg ${item.bgColor} flex-shrink-0`}>
+            <div className={`p-2 rounded-full ${item.bgColor} flex-shrink-0 border`}>
               <Icon className={`w-5 h-5 ${item.color}`} />
             </div>
             <div className="flex-1">

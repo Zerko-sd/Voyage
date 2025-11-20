@@ -52,7 +52,7 @@ export default function PlaceDetailPanel({
           <button
             onClick={onClose}
             className="absolute top-4 right-4 p-2 rounded-full bg-dark-900/40 hover:bg-dark-900/60 transition-colors backdrop-blur-sm border border-white/10">
-            <X className="w-5 h-5 text-white" />
+            <X className="w-5 h-5" />
           </button>
 
           <div className="flex items-start space-x-3 mb-4">
@@ -105,8 +105,8 @@ export default function PlaceDetailPanel({
 
           {/* Score Breakdown */}
           <section>
-            <h3 className="text-lg font-bold text-white mb-4 flex items-center space-x-2">
-              <Shield className="w-5 h-5 text-pastel-cyan" />
+            <h3 className="text-lg font-bold text-gray-900 mb-4 flex items-center space-x-2">
+              <Shield className="w-5 h-5" />
               <span>Score Breakdown</span>
             </h3>
             <div className="space-y-3">
@@ -128,8 +128,8 @@ export default function PlaceDetailPanel({
 
           {/* Crime Information */}
           <section>
-            <h3 className="text-lg font-bold text-white mb-4 flex items-center space-x-2">
-              <Shield className="w-5 h-5 text-pastel-mint" />
+            <h3 className="text-lg font-bold text-gray-900 mb-4 flex items-center space-x-2">
+              <Shield className="w-5 h-5" />
               <span>Crime Statistics</span>
             </h3>
             <CrimeInfoSection crime={place.crime} />
@@ -138,7 +138,7 @@ export default function PlaceDetailPanel({
           {/* Infrastructure */}
           <section>
             <h3 className="text-lg font-bold text-white mb-4 flex items-center space-x-2">
-              <Sparkles className="w-5 h-5 text-pastel-yellow" />
+              <Sparkles className="w-5 h-5 text-pastel-mint" />
               <span>Safety Infrastructure</span>
             </h3>
             <InfrastructureSection infra={place.infra} />

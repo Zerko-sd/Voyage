@@ -29,10 +29,10 @@ export default function CrimeInfoSection({ crime }: CrimeInfoSectionProps) {
   ];
 
   const getCrimeLevel = (value: number) => {
-    if (value < 20) return { text: "Low", color: "text-green-600 bg-green-50" };
+    if (value < 20) return { text: "Low", color: "text-pastel-mint bg-pastel-mint/10 border-pastel-mint/20" };
     if (value < 50)
-      return { text: "Moderate", color: "text-yellow-600 bg-yellow-50" };
-    return { text: "High", color: "text-red-600 bg-red-50" };
+      return { text: "Moderate", color: "text-pastel-yellow bg-pastel-yellow/10 border-pastel-yellow/20" };
+    return { text: "High", color: "text-pastel-pink bg-pastel-pink/10 border-pastel-pink/20" };
   };
 
   return (
@@ -44,31 +44,31 @@ export default function CrimeInfoSection({ crime }: CrimeInfoSectionProps) {
         return (
           <div
             key={type.name}
-            className="flex items-start space-x-3 p-3 rounded-xl bg-white border border-gray-100 hover:shadow-sm transition-shadow">
+            className="flex items-start space-x-3 p-3 rounded-3xl bg-dark-700 border border-white/5 hover:border-white/10 transition-all">
             <div className="flex-shrink-0">
-              <div className={`p-2 rounded-lg ${level.color}`}>
+              <div className={`p-2 rounded-full ${level.color} border`}>
                 <Icon className="w-5 h-5" />
               </div>
             </div>
             <div className="flex-1 min-w-0">
               <div className="flex items-center justify-between mb-1">
-                <h4 className="text-sm font-semibold text-gray-900">
+                <h4 className="text-sm font-semibold text-white">
                   {type.name}
                 </h4>
                 <span
-                  className={`text-xs font-medium px-2 py-1 rounded-full ${level.color}`}>
+                  className={`text-xs font-medium px-2 py-1 rounded-full ${level.color} border`}>
                   {level.text}
                 </span>
               </div>
-              <p className="text-xs text-gray-500">{type.description}</p>
-              <div className="mt-2 h-1.5 bg-gray-100 rounded-full overflow-hidden">
+              <p className="text-xs text-zinc-400">{type.description}</p>
+              <div className="mt-2 h-1.5 bg-dark-900 rounded-full overflow-hidden border border-white/5">
                 <div
                   className={`h-full ${
                     type.value < 20
-                      ? "bg-green-500"
+                      ? "bg-pastel-mint shadow-lg shadow-pastel-mint/20"
                       : type.value < 50
-                      ? "bg-yellow-500"
-                      : "bg-red-500"
+                      ? "bg-pastel-yellow shadow-lg shadow-pastel-yellow/20"
+                      : "bg-pastel-pink shadow-lg shadow-pastel-pink/20"
                   } transition-all duration-300`}
                   style={{ width: `${type.value}%` }}
                 />
